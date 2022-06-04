@@ -4,3 +4,7 @@
 - run npm start 
 - similarily go in server folder and run npm i
 - run npm start this time in server
+
+
+
+hosted website on heroku -> https://rex-furniture.herokuapp.com
