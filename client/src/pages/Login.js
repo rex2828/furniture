@@ -6,11 +6,11 @@ const Login = () => {
 
 
     const google = () => {
-        window.open('http://localhost:8000/auth/google', '_self')
+        window.open(`${window.location.origin}/auth/google`, '_self')
     }
 
     const github = () => {
-        window.open('http://localhost:8000/auth/github', '_self')
+        window.open(`${window.location.origin}/auth/github`, '_self')
     }
 
     return (
