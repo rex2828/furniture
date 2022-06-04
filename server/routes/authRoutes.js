@@ -1,7 +1,13 @@
+require('dotenv').config()
 const router = require("express").Router();
 const passport = require("passport");
-
-const CLIENT_URL = "http://localhost:8000";
+let CLIENT_URL;
+if (process.env.NODE_ENV === 'production') {
+    CLIENT_URL = "https://rex-furniture.herokuapp.com";
+}
+else {
+    CLIENT_URL = "http://localhost:8000"
+}
 
 router.get("/login/success", (req, res) => {
     if (req.user) {

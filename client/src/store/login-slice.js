@@ -19,7 +19,7 @@ const loginSlice = createSlice({
 
 export const login = () => async (dispatch) => {
     try {
-        const res = await axios.get("http://localhost:8000/auth/login/success", { withCredentials: true });
+        const res = await axios.get(`${window.location.origin}/auth/login/success`, { withCredentials: true });
         if (res.data.success) {
             dispatch(loginSlice.actions.loginUser(res.data.user))
         }
@@ -30,9 +30,9 @@ export const login = () => async (dispatch) => {
 
 export const logout = () => async (dispatch) => {
     try {
-        await axios.get("http://localhost:8000/auth/logout", { withCredentials: true });
+        await axios.get(`${window.location.origin}/auth/logout`, { withCredentials: true });
         dispatch(loginSlice.actions.logoutUser())
-        window.location.href = 'http://localhost:8000'
+        window.location.href = window.location.origin
     } catch (error) {
         throw new Error('can not logout!')
     }
